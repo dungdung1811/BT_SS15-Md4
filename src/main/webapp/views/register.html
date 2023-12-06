@@ -7,31 +7,23 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 </head>
 <body>
-<h1>ĐĂNG NHẬP</h1>
+<h1>ĐĂNG KÍ TÀI KHOẢN</h1>
 <div class="container">
     <div class="card card-container">
         <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
         <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
         <p id="profile-name" class="profile-name-card"></p>
-        <form class="form-signin" action="/login" method="post" th:object="${user}">
+        <form class="form-signin" action="/register" method="post" th:object="${user}">
             <span id="reauth-email" class="reauth-email"></span>
-            <input th:field="*{email}" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-            <div th:if="${err}" class="error-message">
-                <p th:text="${err}"></p>
-            </div>
-
-            <input th:field="*{password}" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <div th:if="${err}" class="error-message">
-                <p th:text="${err}"></p>
-            </div>
+            <input th:field="*{email}" type="email"  class="form-control" placeholder="Email address" required autofocus>
+            <input th:field="*{password}" type="password"  class="form-control" placeholder="Password" required>
+            <input th:field="*{userName}" type="text"  class="form-control" placeholder="name" required>
             <div id="remember" class="checkbox">
                 <label>
-                    <input type="checkbox" th:name="checked" th:checked="${checked}" > Remember me
-<!--                    <input type="checkbox" th:name="remember-me" th:checked="${checked}" /> Remember me-->
-
+                    <input type="checkbox" th:name="checked" value="remember-me"> Remember me
                 </label>
             </div>
-            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Đăng Nhập </button>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit"> Đăng ký </button>
         </form><!-- /form -->
         <a href="#" class="forgot-password">
             Forgot the password?

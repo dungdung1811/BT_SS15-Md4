@@ -5,16 +5,25 @@ public class User {
     private String userName;
     private  String email;
     private  String password;
+    private  boolean role;
+
+    public boolean isRole() {
+        return role;
+    }
 
     public User() {
 
     }
-
-    public User(Integer id, String userName, String email, String password) {
+    
+    public User(Integer id, String userName, String email, String password, boolean role) {
         this.id = id;
         this.userName = userName;
         this.email = email;
         this.password = password;
+        this.role = role;
+    }
+    public void setRole(boolean role) {
+        this.role = role;
     }
 
     public Integer getId() {

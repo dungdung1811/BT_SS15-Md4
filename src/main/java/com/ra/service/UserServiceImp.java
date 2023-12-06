@@ -1,12 +1,15 @@
 package com.ra.service;
 
+import com.ra.model.dao.UserDAO;
 import com.ra.model.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
 public class UserServiceImp implements UserSevice {
-
+   @Autowired
+   UserDAO userDAO;
     @Override
     public List<User> findAll() {
         return null;
@@ -32,11 +35,14 @@ public class UserServiceImp implements UserSevice {
 
     }
 
+
     @Override
-    public Boolean login(User user) {
-        if(user.getEmail().equals("dung@gmail.com")&& user.getPassword().equals("123")){
-            return true;
-        }
-        return false;
+    public User login(User user) {
+        return userDAO.login(user);
+    }
+
+    @Override
+    public Boolean register(User user) {
+        return userDAO.register(user);
     }
 }

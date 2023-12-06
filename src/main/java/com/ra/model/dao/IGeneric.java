@@ -1,4 +1,4 @@
-package com.ra.service;
+package com.ra.model.dao;
 
 import java.util.List;
 
@@ -12,6 +12,4 @@ public interface IGeneric <T,ID>{
     T findById(ID id);
 
     void delete(ID id);
-
-
 }
